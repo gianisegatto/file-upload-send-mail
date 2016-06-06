@@ -7,4 +7,4 @@
 bin
 target
 dump.rdb
-*.logmetadata
+*.log
