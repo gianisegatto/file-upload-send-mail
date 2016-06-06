@@ -17,16 +17,23 @@ public class MailServiceTest extends AbstractTest {
 	private MailService mailService;
 	
 	@Test
-	public void testSendMail() throws AddressException {
+	public void shouldSendListOfMail() throws AddressException {
 		
 		List<String> toList = new ArrayList<String>();
-		toList.add("gianisegatto@gmail.com");
-		toList.add("renatakazuenunes@gmail.com");
+		toList.add("test@gmail.com");
+		toList.add("test2@gmail.com");
 		
 		String subject = "E-mail test";
 		String body = "Testing send mail";
 		
 		this.mailService.sendMail(toList, subject, body);
+	}
+	
+	
+	@Test
+	public void shouldSendOneOfMail() throws AddressException {
+		
+		this.mailService.sendMail("test@gmail.com", "E-mail test", "Testing send mail");
 	}
 	
 }
